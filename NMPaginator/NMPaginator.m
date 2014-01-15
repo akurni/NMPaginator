@@ -102,12 +102,17 @@
     [self.delegate paginator:self didReceiveResults:results];
 }
 
-- (void)failed
+- (void)failedWithError:(NSError *)error
 {
     self.requestStatus = RequestStatusDone;
-    
-    if([self.delegate respondsToSelector:@selector(paginatorDidFailToRespond:)])
-        [self.delegate paginatorDidFailToRespond:self];
+
+    if([self.delegate respondsToSelector:@selector(paginatorDidFailToRespond:withError:)])
+        [self.delegate paginatorDidFailToRespond:self withError:error];
+}
+
+- (void)failed
+{
+    [self failedWithError:nil];
 }
 
 @end

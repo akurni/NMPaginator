@@ -16,7 +16,7 @@ typedef enum {
 @required
 - (void)paginator:(id)paginator didReceiveResults:(NSArray *)results;
 @optional
-- (void)paginatorDidFailToRespond:(id)paginator;
+- (void)paginatorDidFailToRespond:(id)paginator withError:(NSError*) error;
 - (void)paginatorDidReset:(id)paginator;
 @end
 
@@ -42,5 +42,6 @@ typedef enum {
 // call these from subclass when you receive the results
 - (void)receivedResults:(NSArray *)results total:(NSInteger)total;
 - (void)failed;
+- (void)failedWithError:(NSError*) error;
 
 @end
