@@ -43,5 +43,7 @@ typedef enum {
 - (void)receivedResults:(NSArray *)results total:(NSInteger)total;
 - (void)failed;
 - (void)failedWithError:(NSError*) error;
+- (void) removeResultAtIndex:(NSInteger) index;
+- (void) updateResultAtIndex:(NSInteger) index withObject:(NSDictionary *)obj;
 
 @end

@@ -115,4 +115,10 @@
     [self failedWithError:nil];
 }
 
+- (void) removeResultAtIndex:(NSInteger) index {
+    [self.results removeObjectAtIndex:index];
+}
+- (void) updateResultAtIndex:(NSInteger) index withObject:(NSDictionary *)obj {
+    [self.results replaceObjectAtIndex:index withObject:obj];
+}
 @end
